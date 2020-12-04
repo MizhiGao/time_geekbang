@@ -24,7 +24,7 @@ a{
 .course-number-sum,.page-footer,.activities_status,.official-accounts,.plateform-name{
     font-size:12px;
 }
-.course-number-sum,.path-all,.user-box,.user-login,.user-register,.course-number,.list-item,.course-nav-item,.number-courses-student,.original-price,.activity-time,.official-accounts,.plateform-name,.footer-info,.footer-info-link,.contact-us{
+.course-number-sum,.path-all,.user-box,.user-login,.user-register,.course-number,.list-item,.course-nav-item,.number-courses-student,.original-price,.activity-time,.official-accounts,.plateform-name,.footer-info,.footer-info-link,.contact-us,.icon-item{
     color: #888888;
 }
 .path-all:hover,.nav-item_hover:hover,.nav-item:hover,.list-item:hover,.course-name:hover{
@@ -79,9 +79,21 @@ a{
      height: 16px; 
     vertical-align: middle;
 }
+.search-icon{
+    display:inline-block;
+    vertical-align: middle;
+    width:16px;
+    height: 16px;
+    background: url('img/search.png') no-repeat center;
+    background-size:16px;
+    }
 .search-icon:hover{
-background: url('img/search_hover.png') no-repeat center;
-background-size:16px;
+    display:inline-block;
+    vertical-align: middle;
+    width:16px;
+    height: 16px;    
+    background: url('img/search_hover.png') no-repeat center;
+    background-size:16px;
 }
 /* 主体 */
 .main-body{
@@ -116,40 +128,67 @@ align-items: center;
 .study-path-list{
     display: grid;
     grid-template-columns:repeat(4,25%);
-    grid-row:56px;
+    grid-template-rows:56px;
+    margin-top: 12px;
 }
 .course{
     display:grid;
     grid-template-columns:112px 36px;
     grid-template-rows: 100%;
     align-items: center;
+    background-color: #f6f7fa;
+    margin-right:9px;
+    padding:0 13px 0 10px ;
+    border-radius: 5px;
 
 }
 .course-name,.course-number{
     display: block;  
 }
+.course-number{
+   transform:scale(0.8);
+   margin-left: -12px;
+}
+/* 课程分类 */
 .classify-section{
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows:44px 78px 71px;
-    padding: 0 20px;
+    grid-template-rows:44px 78px 60px;
+    align-content:center;
+    box-shadow: 0px 2px 2px 1px rgba(160, 160, 160, 0.767);
+    background-color: white;
+    row-gap:10px;
 }
 .classify-list{
+    padding: 0 20px ;
     display: grid;
     grid-template-columns: 50px 620px;
     grid-template-rows:100%;
+    overflow: hidden;
 }
 .list-title{
-    font-weight:bold;
+    font-weight:500;
+}
+.list-item:first-child{
+    line-height: 22px;
+    height: 22px;
+    border-radius: 14px;
+    width: 52px;
+    background-color: #fbf5ee;
 }
 .list-item{
     display: inline-block;
     margin: 0 5px 12px 0;
     padding: 0 12px;
-}
+} 
+/* 课程排序分类标准 */
 .course-nav-item{
     display: inline-block;
     margin-right: 40px;
+}
+.course-nav-item:hover{
+    color: #666565;
+    font-weight: 500;
 }
 .course-nav-item:first-child{
     color: #666565;
@@ -164,6 +203,7 @@ align-items: center;
     grid-template-rows:57px 80px 35px; 
     }
 .course-list{
+    position: relative;
     display: grid;
     grid-template-columns:repeat(2,282px);
     grid-template-rows:repeat(2 20px); 
@@ -178,17 +218,30 @@ align-items: center;
 	text-overflow:ellipsis;
     white-space:nowrap;
     margin-top: 10px;
+    padding-right:25px;
+    line-height: 20px;
+
 }
 .course-item__description:hover{
     text-decoration: underline;
 }
 .course-item__description .free{
+    position: absolute;
+    display: inline-block;
     color: #Fa8919;
-    width: 8px;
-    height: 6px;
-    line-height: 6px;
+    text-align: center;
+    width: 48px;
+    height: 26px;
+    line-height: 26px;
     border: 1px solid #Fa8919;
-    font-size: 8px;
+    border-radius: 6px;
+    font-size: 18px;
+    transform:scale(0.5);
+    transform-origin: top left;
+    margin: 4px 0px;
+}
+.free-course{
+    margin-left: 28px;
 }
 .special-price{
     color: #Fa8919;
@@ -220,6 +273,7 @@ height: 33px;
 .activities-box,.follow-us-box,.cooperate{
     margin-bottom: 30px;
 }
+/* 我的课程 */
 .user-course-box{
     align-self: flex-end;
     margin-bottom: 20px;
@@ -230,6 +284,7 @@ height: 33px;
     border-radius:5px;
     color: #Fa8919;
     border: 1px solid #Fa8919 ;
+    background-color:white;
 }
 .user-course:hover{
     width:105px;
@@ -406,11 +461,30 @@ margin-left: 10px;
 .icon-item{
     display: none;
 }
+.icon-tel:hover{
+    background:url('img/cellphone_active.png') no-repeat ;    
+    width:25px;
+    height: 25px;
+    background-size: contain;
+}
+.icon-email:hover{
+    background:url('https://static001.geekbang.org/static/time/img/geek_elements/email_active.png') no-repeat ;    
+    width:25px;
+    height: 25px;
+    background-size: contain;
+}
+.icon-location:hover{
+    background:url('https://static001.geekbang.org/static/time/img/geek_elements/location_active.png') no-repeat ;    
+    width:25px;
+    height: 25px;
+    background-size: contain;
+}
+
+
 .footer-item:hover .icon-item{
     position: absolute;
     display: inline-block;
-    text-align: center;
-    
+    text-align: center;  
     width: 150px;
     height: 90px;
     bottom: 30px;
